@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Hardcoded TMDB API Key
+
 const API_KEY = "8ba553ef731972dcea8daec1009fbdc1";
 const CACHE_KEY = "top_movies";
 const CACHE_DATE_KEY = "top_movies_date";
@@ -16,7 +16,7 @@ function MovieRecommender() {
     loadMovies();
   }, []);
 
-  // Fetch TMDB genres
+
   const fetchGenres = async () => {
     try {
       const res = await fetch(
@@ -30,7 +30,7 @@ function MovieRecommender() {
     }
   };
 
-  // Load movies from cache or fetch
+  
   const loadMovies = async () => {
     const cachedMovies = localStorage.getItem(CACHE_KEY);
     const cachedTime = localStorage.getItem(CACHE_DATE_KEY);
@@ -63,7 +63,7 @@ function MovieRecommender() {
       localStorage.setItem(CACHE_DATE_KEY, Date.now());
     } catch (err) {
       console.error("Error fetching movies:", err);
-      // Fallback movies
+      
       setMovies([
         { id: 1, title: "Fallback Movie 1", vote_average: 8.0, release_date: "2024-01-01", overview: "Some overview..." },
         { id: 2, title: "Fallback Movie 2", vote_average: 7.5, release_date: "2023-12-01", overview: "Some overview..." },
@@ -73,10 +73,10 @@ function MovieRecommender() {
     }
   };
 
-  // Shuffle array helper
+
   const shuffle = (arr) => arr.map(v => ({v, sort: Math.random()})).sort((a,b)=>a.sort-b.sort).map(({v})=>v);
 
-  // Handle genre change
+  
   const handleGenreChange = (e) => {
     const genreId = e.target.value;
     setSelectedGenre(genreId);
