@@ -107,7 +107,7 @@ function MovieRecommender() {
               alt={movie.title}
             />
             <h3>{movie.title}</h3>
-            <p>⭐ {movie.vote_average}</p>
+            <p> {movie.vote_average}</p>
             <p className="movie-year">{movie.release_date?.substring(0, 4)}</p>
             <p className="movie-overview">{movie.overview?.length > 60 ? movie.overview.substring(0, 60) + "..." : movie.overview}</p>
           </div>
