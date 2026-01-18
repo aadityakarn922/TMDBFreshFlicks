@@ -4,7 +4,6 @@ TMDB Fresh Flicks is a React-based movie recommendation website that shows top-r
 
 ## ✨ What this app does
 - Fetches top-rated movies from TMDB
-- Displays movies in rows (5 movies per row)
 - Allows filtering movies by genre
 - Shows movie details like rating, year, and overview
 - Randomizes movies on page refresh
