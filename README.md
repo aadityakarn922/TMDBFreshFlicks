@@ -8,6 +8,7 @@ TMDB Fresh Flicks is a React-based movie recommendation website that shows top-r
 - Shows movie details like rating, year, and overview
 - Randomizes movies on page refresh
 - Uses a dark (black) theme with hover animations
+- shows new movies on each refresh..
 
 ## 🛠 Tech Stack
 - React
