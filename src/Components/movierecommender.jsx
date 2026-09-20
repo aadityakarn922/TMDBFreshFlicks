@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 
 
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const CACHE_KEY = "top_movies";
 const CACHE_DATE_KEY = "top_movies_date";
 
