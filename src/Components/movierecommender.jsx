@@ -93,8 +93,7 @@ function MovieRecommender() {
     return () => clearTimeout(timer);
   }, [fetchGenres, loadMovies]);
 
-  const handleGenreChange = (e) => {
-    const genreId = e.target.value;
+  const handleGenreChange = (genreId) => {
     setSelectedGenre(genreId);
     fetchMovies(genreId);
   };
@@ -103,14 +102,22 @@ function MovieRecommender() {
     <div className="movie-card-container">
       <h1>Top Rated Movies</h1>
 
-      <div>
-        <label>Choose Genre: </label>
-        <select value={selectedGenre} onChange={handleGenreChange}>
-          <option value="">All</option>
-          {genres.map((g) => (
-            <option key={g.id} value={g.id}>{g.name}</option>
-          ))}
-        </select>
+      <div className="genre-bar">
+        <button
+          className={`genre-chip ${selectedGenre === "" ? "active" : ""}`}
+          onClick={() => handleGenreChange("")}
+        >
+          All
+        </button>
+        {genres.map((g) => (
+          <button
+            key={g.id}
+            className={`genre-chip ${selectedGenre === String(g.id) ? "active" : ""}`}
+            onClick={() => handleGenreChange(g.id)}
+          >
+            {g.name}
+          </button>
+        ))}
       </div>
 
       {loading && <p className="status-msg">Loading movies...</p>}

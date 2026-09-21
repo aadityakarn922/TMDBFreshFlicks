@@ -38,6 +38,38 @@ select {
   margin-bottom: 12px;
 }
 
+.genre-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.genre-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-chip:hover {
+  border-color: #ffcc00;
+  color: #ffcc00;
+  transform: translateY(-2px);
+}
+
+.genre-chip.active {
+  background-color: #ffcc00;
+  color: #000;
+  border-color: #ffcc00;
+  font-weight: bold;
+}
+
 .movies-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
